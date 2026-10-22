@@ -512,84 +512,274 @@
   </div>
 </section>
 
-<!-- ═════════ 05 · PROYECTOS (galería horizontal con scroll) ═════════ -->
-<section class="hs sec sec--dark" id="proyectos" data-label="Proyectos" aria-labelledby="hs-title">
-  <div class="hs__pin">
-    <header class="hs__head wrap">
+<!-- ═════════ 05 · PROYECTOS (por categorías) ═════════ -->
+<section class="pj sec sec--dark" id="proyectos" data-label="Proyectos" aria-labelledby="pj-title">
+  <div class="wrap">
+    <header class="pj__head">
       <div>
-        <p class="eyebrow"><span class="eyebrow__n">[04]</span>Proyectos</p>
-        <h2 class="hs__title" id="hs-title">Obra real, <em>sin filtros.</em></h2>
+        <p class="eyebrow" data-reveal><span class="eyebrow__n">[04]</span>Proyectos</p>
+        <h2 class="h2 pj__title" id="pj-title" data-words>Obra real, <em>sin filtros.</em></h2>
       </div>
-      <p class="hs__sub">Azoteas, plafones, naves y cocinas industriales. Toca cualquier foto para verla en grande.</p>
+      <p class="pj__sub" data-reveal>Azoteas, plafones, naves y cocinas industriales, ordenados por tipo de trabajo. Elige una categoría y toca cualquier foto para verla en grande.</p>
     </header>
 
-    <div class="hs__viewport">
-      <ul class="hs__track">
-        <li class="hs__item" style="--ar:.5625">
-          <button class="hs__card" type="button" data-full="img/proyectos/horno-extraccion.jpg" data-title="Extracción para horno industrial" data-cursor="Ver">
-            <span class="hs__media"><img src="img/proyectos/horno-extraccion-sm.jpg" srcset="img/proyectos/horno-extraccion-sm.jpg 540w, img/proyectos/horno-extraccion.jpg 899w" sizes="(max-width: 700px) 60vw, 30vw" width="899" height="1599" loading="lazy" decoding="async" alt="Ducto y extractor sobre un horno rotativo industrial para extraer el calor de la cocina"></span>
-            <span class="hs__meta"><i>01</i><b>Extracción para horno industrial</b><em>Extracción</em></span>
+    <div class="pj__tabs" role="tablist" aria-label="Tipos de proyecto">
+      <button class="pj__tab" type="button" role="tab" id="pj-t1" aria-controls="pj-p1" aria-selected="true" tabindex="0"><i>01</i><span>Ductería</span><b>08</b></button>
+      <button class="pj__tab" type="button" role="tab" id="pj-t2" aria-controls="pj-p2" aria-selected="false" tabindex="-1"><i>02</i><span>Alupir · P3</span><b>04</b></button>
+      <button class="pj__tab" type="button" role="tab" id="pj-t3" aria-controls="pj-p3" aria-selected="false" tabindex="-1"><i>03</i><span>Aislamientos</span><b>07</b></button>
+      <button class="pj__tab" type="button" role="tab" id="pj-t4" aria-controls="pj-p4" aria-selected="false" tabindex="-1"><i>04</i><span>Difusores y equipos</span><b>08</b></button>
+      <button class="pj__tab" type="button" role="tab" id="pj-t5" aria-controls="pj-p5" aria-selected="false" tabindex="-1"><i>05</i><span>Extracción</span><b>06</b></button>
+    </div>
+
+    <div class="pj__panel" role="tabpanel" id="pj-p1" aria-labelledby="pj-t1">
+      <header class="pj__phead">
+        <h3 class="pj__ptitle">Ductería galvanizada, redonda y de lámina negra</h3>
+        <p class="pj__pdesc">Rectangular, redonda y de lámina negra: trazada, cortada y armada a la medida de cada obra, de la azotea al sótano.</p>
+      </header>
+      <ul class="pj__grid">
+        <li class="pj__item" style="--ar:1.333;--k:0">
+          <button class="pj__card" type="button" data-full="img/proyectos/ducteria-azotea-red.jpg" data-title="Red de ductería galvanizada en azotea" data-cursor="Ver" aria-label="Ampliar foto: Red de ductería galvanizada en azotea">
+            <img src="img/proyectos/ducteria-azotea-red-sm.jpg" srcset="img/proyectos/ducteria-azotea-red-sm.jpg 640w, img/proyectos/ducteria-azotea-red.jpg 1152w" sizes="(max-width: 700px) 50vw, 24vw" width="640" height="480" loading="lazy" decoding="async" alt="Red de ductos galvanizados, extractores y equipos de aire sobre la azotea de un edificio, con campo abierto al fondo">
+            <span class="pj__meta"><i>01</i><b>Red de ductería galvanizada en azotea</b></span>
           </button>
         </li>
-        <li class="hs__item" style="--ar:1.329">
-          <button class="hs__card" type="button" data-full="img/proyectos/ducto-ventilador.jpg" data-title="Ductería galvanizada con extractor centrífugo" data-cursor="Ver">
-            <span class="hs__media"><img src="img/proyectos/ducto-ventilador-sm.jpg" srcset="img/proyectos/ducto-ventilador-sm.jpg 640w, img/proyectos/ducto-ventilador.jpg 1280w" sizes="(max-width: 700px) 86vw, 46vw" width="1280" height="963" loading="lazy" decoding="async" alt="Ductería galvanizada conectada a un extractor centrífugo sobre una cubierta metálica"></span>
-            <span class="hs__meta"><i>02</i><b>Ductería galvanizada con extractor centrífugo</b><em>Ductería</em></span>
+        <li class="pj__item" style="--ar:1.333;--k:1">
+          <button class="pj__card" type="button" data-full="img/proyectos/azotea-ducteria-extractor.jpg" data-title="Ductería y extractor en azotea" data-cursor="Ver" aria-label="Ampliar foto: Ductería y extractor en azotea">
+            <img src="img/proyectos/azotea-ducteria-extractor-sm.jpg" srcset="img/proyectos/azotea-ducteria-extractor-sm.jpg 640w, img/proyectos/azotea-ducteria-extractor.jpg 1152w" sizes="(max-width: 700px) 50vw, 24vw" width="640" height="480" loading="lazy" decoding="async" alt="Ductería galvanizada con un extractor sobre su base y unidades de aire acondicionado en la azotea de un edificio">
+            <span class="pj__meta"><i>02</i><b>Ductería y extractor en azotea</b></span>
           </button>
         </li>
-        <li class="hs__item" style="--ar:.5625">
-          <button class="hs__card" type="button" data-full="img/proyectos/chimenea-inox.jpg" data-title="Ducto de extracción en acero inoxidable" data-cursor="Ver">
-            <span class="hs__media"><img src="img/proyectos/chimenea-inox-sm.jpg" srcset="img/proyectos/chimenea-inox-sm.jpg 540w, img/proyectos/chimenea-inox.jpg 900w" sizes="(max-width: 700px) 60vw, 30vw" width="900" height="1600" loading="lazy" decoding="async" alt="Ducto de extracción de acero inoxidable con codo y soportes metálicos fijado a un muro de concreto"></span>
-            <span class="hs__meta"><i>03</i><b>Ducto de extracción en acero inoxidable</b><em>Extracción</em></span>
+        <li class="pj__item" style="--ar:0.750;--k:2">
+          <button class="pj__card" type="button" data-full="img/proyectos/codo-galvanizado-cubierta.jpg" data-title="Codo galvanizado sobre cubierta" data-cursor="Ver" aria-label="Ampliar foto: Codo galvanizado sobre cubierta">
+            <img src="img/proyectos/codo-galvanizado-cubierta-sm.jpg" srcset="img/proyectos/codo-galvanizado-cubierta-sm.jpg 540w, img/proyectos/codo-galvanizado-cubierta.jpg 864w" sizes="(max-width: 700px) 50vw, 24vw" width="540" height="720" loading="lazy" decoding="async" alt="Codo de lámina galvanizada con gajos soldados montado sobre la cubierta blanca de una nave">
+            <span class="pj__meta"><i>03</i><b>Codo galvanizado sobre cubierta</b></span>
           </button>
         </li>
-        <li class="hs__item" style="--ar:1.778">
-          <button class="hs__card" type="button" data-full="img/proyectos/difusor-techo.jpg" data-title="Difusor de aire acondicionado en plafón" data-cursor="Ver">
-            <span class="hs__media"><img src="img/proyectos/difusor-techo-sm.jpg" srcset="img/proyectos/difusor-techo-sm.jpg 640w, img/proyectos/difusor-techo.jpg 1600w" sizes="(max-width: 700px) 86vw, 52vw" width="1600" height="900" loading="lazy" decoding="async" alt="Difusor de aire acondicionado de cuatro vías instalado en un plafón"></span>
-            <span class="hs__meta"><i>04</i><b>Difusor de aire acondicionado en plafón</b><em>Aire acondicionado</em></span>
+        <li class="pj__item" style="--ar:0.620;--k:3">
+          <button class="pj__card" type="button" data-full="img/proyectos/plenum-galvanizado.jpg" data-title="Transición galvanizada con conexión flexible" data-cursor="Ver" aria-label="Ampliar foto: Transición galvanizada con conexión flexible">
+            <img src="img/proyectos/plenum-galvanizado-sm.jpg" srcset="img/proyectos/plenum-galvanizado-sm.jpg 540w, img/proyectos/plenum-galvanizado.jpg 720w" sizes="(max-width: 700px) 50vw, 24vw" width="540" height="890" loading="lazy" decoding="async" alt="Plenum y transición de lámina galvanizada con lona flexible instalados sobre un equipo de aire">
+            <span class="pj__meta"><i>04</i><b>Transición galvanizada con conexión flexible</b></span>
           </button>
         </li>
-        <li class="hs__item" style="--ar:.5625">
-          <button class="hs__card" type="button" data-full="img/proyectos/extractor-azotea.jpg" data-title="Extractor centrífugo sobre base galvanizada" data-cursor="Ver">
-            <span class="hs__media"><img src="img/proyectos/extractor-azotea-sm.jpg" srcset="img/proyectos/extractor-azotea-sm.jpg 540w, img/proyectos/extractor-azotea.jpg 900w" sizes="(max-width: 700px) 60vw, 30vw" width="900" height="1600" loading="lazy" decoding="async" alt="Extractor centrífugo S&P instalado sobre una base galvanizada en una azotea"></span>
-            <span class="hs__meta"><i>05</i><b>Extractor centrífugo sobre base galvanizada</b><em>Extracción</em></span>
+        <li class="pj__item" style="--ar:1.329;--k:4">
+          <button class="pj__card" type="button" data-full="img/proyectos/ducto-ventilador.jpg" data-title="Ductería galvanizada con extractor centrífugo" data-cursor="Ver" aria-label="Ampliar foto: Ductería galvanizada con extractor centrífugo">
+            <img src="img/proyectos/ducto-ventilador-sm.jpg" srcset="img/proyectos/ducto-ventilador-sm.jpg 640w, img/proyectos/ducto-ventilador.jpg 1280w" sizes="(max-width: 700px) 50vw, 24vw" width="640" height="482" loading="lazy" decoding="async" alt="Ductería galvanizada conectada a un extractor centrífugo sobre una cubierta metálica">
+            <span class="pj__meta"><i>05</i><b>Ductería galvanizada con extractor centrífugo</b></span>
           </button>
         </li>
-        <li class="hs__item" style="--ar:.607">
-          <button class="hs__card" type="button" data-full="img/proyectos/plenum-galvanizado.jpg" data-title="Transición galvanizada con conexión flexible" data-cursor="Ver">
-            <span class="hs__media"><img src="img/proyectos/plenum-galvanizado-sm.jpg" srcset="img/proyectos/plenum-galvanizado-sm.jpg 540w, img/proyectos/plenum-galvanizado.jpg 720w" sizes="(max-width: 700px) 60vw, 30vw" width="720" height="1186" loading="lazy" decoding="async" alt="Plenum y transición de lámina galvanizada con lona flexible instalados sobre un equipo de aire"></span>
-            <span class="hs__meta"><i>06</i><b>Transición galvanizada con conexión flexible</b><em>Ductería</em></span>
+        <li class="pj__item" style="--ar:1.333;--k:5">
+          <button class="pj__card" type="button" data-full="img/proyectos/ducteria-lamina-negra.jpg" data-title="Ductería de lámina negra en sótano" data-cursor="Ver" aria-label="Ampliar foto: Ductería de lámina negra en sótano">
+            <img src="img/proyectos/ducteria-lamina-negra-sm.jpg" srcset="img/proyectos/ducteria-lamina-negra-sm.jpg 640w, img/proyectos/ducteria-lamina-negra.jpg 1152w" sizes="(max-width: 700px) 50vw, 24vw" width="640" height="480" loading="lazy" decoding="async" alt="Ductos rectangulares de lámina negra colgados del techo en un estacionamiento subterráneo">
+            <span class="pj__meta"><i>06</i><b>Ductería de lámina negra en sótano</b></span>
           </button>
         </li>
-        <li class="hs__item" style="--ar:1.778">
-          <button class="hs__card" type="button" data-full="img/proyectos/aislamiento-ducto.jpg" data-title="Ducto aislado y protegido en azotea" data-cursor="Ver">
-            <span class="hs__media"><img src="img/proyectos/aislamiento-ducto-sm.jpg" srcset="img/proyectos/aislamiento-ducto-sm.jpg 640w, img/proyectos/aislamiento-ducto.jpg 1600w" sizes="(max-width: 700px) 86vw, 52vw" width="1600" height="900" loading="lazy" decoding="async" alt="Ducto aislado y recubierto de blanco que cruza una azotea industrial"></span>
-            <span class="hs__meta"><i>07</i><b>Ducto aislado y protegido en azotea</b><em>Aislamiento</em></span>
+        <li class="pj__item" style="--ar:0.750;--k:6">
+          <button class="pj__card" type="button" data-full="img/proyectos/espiroducto-soporteria.jpg" data-title="Espiroducto con soportería" data-cursor="Ver" aria-label="Ampliar foto: Espiroducto con soportería">
+            <img src="img/proyectos/espiroducto-soporteria-sm.jpg" srcset="img/proyectos/espiroducto-soporteria-sm.jpg 540w, img/proyectos/espiroducto-soporteria.jpg 864w" sizes="(max-width: 700px) 50vw, 24vw" width="540" height="720" loading="lazy" decoding="async" alt="Espiroducto vertical colgado de un perfil metálico dentro de un cubo oscuro, con andamio al pie">
+            <span class="pj__meta"><i>07</i><b>Espiroducto con soportería</b></span>
           </button>
         </li>
-        <li class="hs__item" style="--ar:1.779">
-          <button class="hs__card" type="button" data-full="img/proyectos/azotea-extractores.jpg" data-title="Azotea con extractores e inyección de aire" data-cursor="Ver">
-            <span class="hs__media"><img src="img/proyectos/azotea-extractores-sm.jpg" srcset="img/proyectos/azotea-extractores-sm.jpg 640w, img/proyectos/azotea-extractores.jpg 1599w" sizes="(max-width: 700px) 86vw, 52vw" width="1599" height="899" loading="lazy" decoding="async" alt="Azotea con extractores VE 04 y VE 05, unidad de inyección VI 02 y ducto galvanizado con sombrerete"></span>
-            <span class="hs__meta"><i>08</i><b>Azotea con extractores e inyección de aire</b><em>Extracción</em></span>
+        <li class="pj__item" style="--ar:0.750;--k:7">
+          <button class="pj__card" type="button" data-full="img/proyectos/ducto-redondo-y.jpg" data-title="Derivación en Y de ducto redondo" data-cursor="Ver" aria-label="Ampliar foto: Derivación en Y de ducto redondo">
+            <img src="img/proyectos/ducto-redondo-y-sm.jpg" srcset="img/proyectos/ducto-redondo-y-sm.jpg 540w, img/proyectos/ducto-redondo-y.jpg 864w" sizes="(max-width: 700px) 50vw, 24vw" width="540" height="720" loading="lazy" decoding="async" alt="Derivación en Y de ducto redondo de lámina con costura soldada, fabricada y apoyada en el piso del taller">
+            <span class="pj__meta"><i>08</i><b>Derivación en Y de ducto redondo</b></span>
           </button>
-        </li>
-        <li class="hs__item hs__item--cta">
-          <div class="hs__end">
-            <p class="eyebrow">¿Tu obra sigue?</p>
-            <p class="hs__endtxt">La próxima foto puede ser <em>tu proyecto.</em></p>
-            <a class="btn btn--primary" data-magnetic href="https://wa.me/525511546544?text=Hola%20Leonardo%2C%20vi%20las%20obras%20en%20su%20p%C3%A1gina%20y%20quiero%20una%20cotizaci%C3%B3n%20para%20mi%20proyecto." target="_blank" rel="noopener">
-              <span>Hagamos mi proyecto</span><svg class="ico ico--arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
-            </a>
-          </div>
         </li>
       </ul>
     </div>
 
-    <footer class="hs__foot wrap" aria-hidden="true">
-      <span class="hs__count"><b>01</b> / 08</span>
-      <span class="hs__bar"><i></i></span>
-      <span class="hs__drag">Desliza →</span>
-    </footer>
+    <div class="pj__panel" role="tabpanel" id="pj-p2" aria-labelledby="pj-t2">
+      <header class="pj__phead">
+        <h3 class="pj__ptitle">Sistemas preaislados Alupir y P3</h3>
+        <p class="pj__pdesc">Ducto de panel con el aislamiento integrado: se arma limpio, hermético y mucho más rápido que un ducto tradicional.</p>
+      </header>
+      <ul class="pj__grid" style="--hk:0.8">
+        <li class="pj__item" style="--ar:1.333;--k:0">
+          <button class="pj__card" type="button" data-full="img/proyectos/alupir-fan-coil.jpg" data-title="Fan coil con sistema Alupir" data-cursor="Ver" aria-label="Ampliar foto: Fan coil con sistema Alupir">
+            <img src="img/proyectos/alupir-fan-coil-sm.jpg" srcset="img/proyectos/alupir-fan-coil-sm.jpg 640w, img/proyectos/alupir-fan-coil.jpg 1152w" sizes="(max-width: 700px) 50vw, 24vw" width="640" height="480" loading="lazy" decoding="async" alt="Ducto preaislado Alupir con curvas conectado a un fan coil bajo la losa, con falso plafón en construcción">
+            <span class="pj__meta"><i>01</i><b>Fan coil con sistema Alupir</b></span>
+          </button>
+        </li>
+        <li class="pj__item" style="--ar:1.333;--k:1">
+          <button class="pj__card" type="button" data-full="img/proyectos/sistema-p3-obra.jpg" data-title="Sistema P3 en obra" data-cursor="Ver" aria-label="Ampliar foto: Sistema P3 en obra">
+            <img src="img/proyectos/sistema-p3-obra-sm.jpg" srcset="img/proyectos/sistema-p3-obra-sm.jpg 640w, img/proyectos/sistema-p3-obra.jpg 1152w" sizes="(max-width: 700px) 50vw, 24vw" width="640" height="480" loading="lazy" decoding="async" alt="Ducto de sistema P3 colgado en una nave en construcción, con muros de block y tuberías de colores al fondo">
+            <span class="pj__meta"><i>02</i><b>Sistema P3 en obra</b></span>
+          </button>
+        </li>
+        <li class="pj__item" style="--ar:1.334;--k:2">
+          <button class="pj__card" type="button" data-full="img/proyectos/panel-preaislado.jpg" data-title="Piezas de panel preaislado a medida" data-cursor="Ver" aria-label="Ampliar foto: Piezas de panel preaislado a medida">
+            <img src="img/proyectos/panel-preaislado-sm.jpg" srcset="img/proyectos/panel-preaislado-sm.jpg 640w, img/proyectos/panel-preaislado.jpg 1600w" sizes="(max-width: 700px) 50vw, 24vw" width="640" height="480" loading="lazy" decoding="async" alt="Piezas de panel preaislado con cara de aluminio cortadas y curvadas a medida, junto a ductos galvanizados en una obra">
+            <span class="pj__meta"><i>03</i><b>Piezas de panel preaislado a medida</b></span>
+          </button>
+        </li>
+        <li class="pj__item" style="--ar:1.780;--k:3">
+          <button class="pj__card" type="button" data-full="img/proyectos/alupir-ducto-unidad.jpg" data-title="Curva de ducto Alupir" data-cursor="Ver" aria-label="Ampliar foto: Curva de ducto Alupir">
+            <img src="img/proyectos/alupir-ducto-unidad-sm.jpg" srcset="img/proyectos/alupir-ducto-unidad-sm.jpg 640w, img/proyectos/alupir-ducto-unidad.jpg 1424w" sizes="(max-width: 700px) 50vw, 24vw" width="640" height="360" loading="lazy" decoding="async" alt="Curva amplia de ducto Alupir de panel preaislado conectada a un equipo, en un espacio técnico">
+            <span class="pj__meta"><i>04</i><b>Curva de ducto Alupir</b></span>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="pj__panel" role="tabpanel" id="pj-p3" aria-labelledby="pj-t3">
+      <header class="pj__phead">
+        <h3 class="pj__ptitle">Aislamientos térmicos en ductos y tuberías</h3>
+        <p class="pj__pdesc">Ductos y tuberías forrados y protegidos para que el aire llegue con la misma temperatura con la que salió.</p>
+      </header>
+      <ul class="pj__grid">
+        <li class="pj__item" style="--ar:1.333;--k:0">
+          <button class="pj__card" type="button" data-full="img/proyectos/aislamiento-ductos-azotea.jpg" data-title="Aislamiento térmico en ductos de azotea" data-cursor="Ver" aria-label="Ampliar foto: Aislamiento térmico en ductos de azotea">
+            <img src="img/proyectos/aislamiento-ductos-azotea-sm.jpg" srcset="img/proyectos/aislamiento-ductos-azotea-sm.jpg 640w, img/proyectos/aislamiento-ductos-azotea.jpg 1152w" sizes="(max-width: 700px) 50vw, 24vw" width="640" height="480" loading="lazy" decoding="async" alt="Ductos rectangulares con codos forrados de aislamiento térmico con acabado metálico y cinta negra, sobre una azotea">
+            <span class="pj__meta"><i>01</i><b>Aislamiento térmico en ductos de azotea</b></span>
+          </button>
+        </li>
+        <li class="pj__item" style="--ar:1.333;--k:1">
+          <button class="pj__card" type="button" data-full="img/proyectos/ducteria-aislada-plafon.jpg" data-title="Ductería galvanizada con aislamiento térmico" data-cursor="Ver" aria-label="Ampliar foto: Ductería galvanizada con aislamiento térmico">
+            <img src="img/proyectos/ducteria-aislada-plafon-sm.jpg" srcset="img/proyectos/ducteria-aislada-plafon-sm.jpg 640w, img/proyectos/ducteria-aislada-plafon.jpg 1152w" sizes="(max-width: 700px) 50vw, 24vw" width="640" height="480" loading="lazy" decoding="async" alt="Ducto rectangular galvanizado con aislamiento térmico colgado bajo un techo negro, en un local en obra">
+            <span class="pj__meta"><i>02</i><b>Ductería galvanizada con aislamiento térmico</b></span>
+          </button>
+        </li>
+        <li class="pj__item" style="--ar:1.334;--k:2">
+          <button class="pj__card" type="button" data-full="img/proyectos/tuberia-forrada-codo.jpg" data-title="Codo de tubería con forro metálico" data-cursor="Ver" aria-label="Ampliar foto: Codo de tubería con forro metálico">
+            <img src="img/proyectos/tuberia-forrada-codo-sm.jpg" srcset="img/proyectos/tuberia-forrada-codo-sm.jpg 640w, img/proyectos/tuberia-forrada-codo.jpg 1600w" sizes="(max-width: 700px) 50vw, 24vw" width="640" height="480" loading="lazy" decoding="async" alt="Codo de tubería con forro metálico brillante y soportes, visto desde abajo contra el cielo">
+            <span class="pj__meta"><i>03</i><b>Codo de tubería con forro metálico</b></span>
+          </button>
+        </li>
+        <li class="pj__item" style="--ar:1.778;--k:3">
+          <button class="pj__card" type="button" data-full="img/proyectos/aislamiento-ducto.jpg" data-title="Ducto aislado y protegido en azotea" data-cursor="Ver" aria-label="Ampliar foto: Ducto aislado y protegido en azotea">
+            <img src="img/proyectos/aislamiento-ducto-sm.jpg" srcset="img/proyectos/aislamiento-ducto-sm.jpg 640w, img/proyectos/aislamiento-ducto.jpg 1600w" sizes="(max-width: 700px) 50vw, 24vw" width="640" height="360" loading="lazy" decoding="async" alt="Ducto aislado y recubierto de blanco que cruza una azotea industrial">
+            <span class="pj__meta"><i>04</i><b>Ducto aislado y protegido en azotea</b></span>
+          </button>
+        </li>
+        <li class="pj__item" style="--ar:0.750;--k:4">
+          <button class="pj__card" type="button" data-full="img/proyectos/aislamiento-ducto-lobby.jpg" data-title="Ducto con aislamiento térmico" data-cursor="Ver" aria-label="Ampliar foto: Ducto con aislamiento térmico">
+            <img src="img/proyectos/aislamiento-ducto-lobby-sm.jpg" srcset="img/proyectos/aislamiento-ducto-lobby-sm.jpg 540w, img/proyectos/aislamiento-ducto-lobby.jpg 864w" sizes="(max-width: 700px) 50vw, 24vw" width="540" height="720" loading="lazy" decoding="async" alt="Transición triangular de ducto forrada con aislamiento metálico, apoyada en el piso de un vestíbulo">
+            <span class="pj__meta"><i>05</i><b>Ducto con aislamiento térmico</b></span>
+          </button>
+        </li>
+        <li class="pj__item" style="--ar:0.749;--k:5">
+          <button class="pj__card" type="button" data-full="img/proyectos/tuberia-forrada-azotea.jpg" data-title="Tubería forrada y protegida en azotea" data-cursor="Ver" aria-label="Ampliar foto: Tubería forrada y protegida en azotea">
+            <img src="img/proyectos/tuberia-forrada-azotea-sm.jpg" srcset="img/proyectos/tuberia-forrada-azotea-sm.jpg 540w, img/proyectos/tuberia-forrada-azotea.jpg 1199w" sizes="(max-width: 700px) 50vw, 24vw" width="540" height="721" loading="lazy" decoding="async" alt="Tuberías forradas con acabado metálico y un tubo de cobre subiendo contra el cielo, en una azotea">
+            <span class="pj__meta"><i>06</i><b>Tubería forrada y protegida en azotea</b></span>
+          </button>
+        </li>
+        <li class="pj__item" style="--ar:0.750;--k:6">
+          <button class="pj__card" type="button" data-full="img/proyectos/tuberias-refrigeracion.jpg" data-title="Tuberías de refrigeración aisladas" data-cursor="Ver" aria-label="Ampliar foto: Tuberías de refrigeración aisladas">
+            <img src="img/proyectos/tuberias-refrigeracion-sm.jpg" srcset="img/proyectos/tuberias-refrigeracion-sm.jpg 540w, img/proyectos/tuberias-refrigeracion.jpg 864w" sizes="(max-width: 700px) 50vw, 24vw" width="540" height="720" loading="lazy" decoding="async" alt="Tuberías de refrigeración con aislamiento negro y líneas de cobre sobre charolas, junto a un ducto galvanizado, bajo una losa de concreto">
+            <span class="pj__meta"><i>07</i><b>Tuberías de refrigeración aisladas</b></span>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="pj__panel" role="tabpanel" id="pj-p4" aria-labelledby="pj-t4">
+      <header class="pj__phead">
+        <h3 class="pj__ptitle">Difusores, fan coils y equipos</h3>
+        <p class="pj__pdesc">Difusores, rejillas, fan coils y gabinetes fabricados, suministrados y colocados, con la ductería lista para operar.</p>
+      </header>
+      <ul class="pj__grid">
+        <li class="pj__item" style="--ar:1.333;--k:0">
+          <button class="pj__card" type="button" data-full="img/proyectos/difusores-rejillas.jpg" data-title="Difusores y rejillas en plafón" data-cursor="Ver" aria-label="Ampliar foto: Difusores y rejillas en plafón">
+            <img src="img/proyectos/difusores-rejillas-sm.jpg" srcset="img/proyectos/difusores-rejillas-sm.jpg 640w, img/proyectos/difusores-rejillas.jpg 1152w" sizes="(max-width: 700px) 50vw, 24vw" width="640" height="480" loading="lazy" decoding="async" alt="Difusor cuadrado de cuatro vías instalado en un plafón blanco">
+            <span class="pj__meta"><i>01</i><b>Difusores y rejillas en plafón</b></span>
+          </button>
+        </li>
+        <li class="pj__item" style="--ar:1.778;--k:1">
+          <button class="pj__card" type="button" data-full="img/proyectos/difusor-techo.jpg" data-title="Difusor de aire acondicionado en plafón" data-cursor="Ver" aria-label="Ampliar foto: Difusor de aire acondicionado en plafón">
+            <img src="img/proyectos/difusor-techo-sm.jpg" srcset="img/proyectos/difusor-techo-sm.jpg 640w, img/proyectos/difusor-techo.jpg 1600w" sizes="(max-width: 700px) 50vw, 24vw" width="640" height="360" loading="lazy" decoding="async" alt="Difusor de aire acondicionado de cuatro vías instalado en un plafón">
+            <span class="pj__meta"><i>02</i><b>Difusor de aire acondicionado en plafón</b></span>
+          </button>
+        </li>
+        <li class="pj__item" style="--ar:1.333;--k:2">
+          <button class="pj__card" type="button" data-full="img/proyectos/fan-coil.jpg" data-title="Fan coil con ductería" data-cursor="Ver" aria-label="Ampliar foto: Fan coil con ductería">
+            <img src="img/proyectos/fan-coil-sm.jpg" srcset="img/proyectos/fan-coil-sm.jpg 640w, img/proyectos/fan-coil.jpg 1152w" sizes="(max-width: 700px) 50vw, 24vw" width="640" height="480" loading="lazy" decoding="async" alt="Fan coil con ductos galvanizados y conexiones flexibles colgado de la estructura de una nave">
+            <span class="pj__meta"><i>03</i><b>Fan coil con ductería</b></span>
+          </button>
+        </li>
+        <li class="pj__item" style="--ar:0.620;--k:3">
+          <button class="pj__card" type="button" data-full="img/proyectos/espiroducto-difusores.jpg" data-title="Espiroducto y difusores redondos" data-cursor="Ver" aria-label="Ampliar foto: Espiroducto y difusores redondos">
+            <img src="img/proyectos/espiroducto-difusores-sm.jpg" srcset="img/proyectos/espiroducto-difusores-sm.jpg 540w, img/proyectos/espiroducto-difusores.jpg 800w" sizes="(max-width: 700px) 50vw, 24vw" width="540" height="961" loading="lazy" decoding="async" alt="Espiroducto aislado con un difusor redondo, colgado del techo de un local">
+            <span class="pj__meta"><i>04</i><b>Espiroducto y difusores redondos</b></span>
+          </button>
+        </li>
+        <li class="pj__item" style="--ar:0.620;--k:4">
+          <button class="pj__card" type="button" data-full="img/proyectos/equipo-conexion-flexible.jpg" data-title="Equipo con conexión flexible" data-cursor="Ver" aria-label="Ampliar foto: Equipo con conexión flexible">
+            <img src="img/proyectos/equipo-conexion-flexible-sm.jpg" srcset="img/proyectos/equipo-conexion-flexible-sm.jpg 540w, img/proyectos/equipo-conexion-flexible.jpg 900w" sizes="(max-width: 700px) 50vw, 24vw" width="540" height="960" loading="lazy" decoding="async" alt="Unidad con persianas conectada a un ducto flexible metálico con abrazaderas azules, dentro de un cuarto técnico">
+            <span class="pj__meta"><i>05</i><b>Equipo con conexión flexible</b></span>
+          </button>
+        </li>
+        <li class="pj__item" style="--ar:0.620;--k:5;--pos:50% 0%">
+          <button class="pj__card" type="button" data-full="img/proyectos/difusor-lineal.jpg" data-title="Difusor lineal en plafón" data-cursor="Ver" aria-label="Ampliar foto: Difusor lineal en plafón">
+            <img src="img/proyectos/difusor-lineal-sm.jpg" srcset="img/proyectos/difusor-lineal-sm.jpg 540w, img/proyectos/difusor-lineal.jpg 672w" sizes="(max-width: 700px) 50vw, 24vw" width="540" height="1234" loading="lazy" decoding="async" alt="Difusor lineal negro integrado en un plafón junto a una luminaria empotrada">
+            <span class="pj__meta"><i>06</i><b>Difusor lineal en plafón</b></span>
+          </button>
+        </li>
+        <li class="pj__item" style="--ar:1.333;--k:6">
+          <button class="pj__card" type="button" data-full="img/proyectos/gabinete-persiana.jpg" data-title="Gabinete galvanizado con persiana" data-cursor="Ver" aria-label="Ampliar foto: Gabinete galvanizado con persiana">
+            <img src="img/proyectos/gabinete-persiana-sm.jpg" srcset="img/proyectos/gabinete-persiana-sm.jpg 640w, img/proyectos/gabinete-persiana.jpg 1152w" sizes="(max-width: 700px) 50vw, 24vw" width="640" height="480" loading="lazy" decoding="async" alt="Gabinete de lámina galvanizada con persiana de lamas inclinadas sobre el piso">
+            <span class="pj__meta"><i>07</i><b>Gabinete galvanizado con persiana</b></span>
+          </button>
+        </li>
+        <li class="pj__item" style="--ar:0.750;--k:7">
+          <button class="pj__card" type="button" data-full="img/proyectos/banco-filtros.jpg" data-title="Banco de filtros galvanizado" data-cursor="Ver" aria-label="Ampliar foto: Banco de filtros galvanizado">
+            <img src="img/proyectos/banco-filtros-sm.jpg" srcset="img/proyectos/banco-filtros-sm.jpg 540w, img/proyectos/banco-filtros.jpg 864w" sizes="(max-width: 700px) 50vw, 24vw" width="540" height="720" loading="lazy" decoding="async" alt="Banco de filtros de lámina galvanizada con la puerta abierta, en taller">
+            <span class="pj__meta"><i>08</i><b>Banco de filtros galvanizado</b></span>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="pj__panel" role="tabpanel" id="pj-p5" aria-labelledby="pj-t5">
+      <header class="pj__phead">
+        <h3 class="pj__ptitle">Extracción, campanas y chimeneas</h3>
+        <p class="pj__pdesc">Salidas de aire, campanas, chimeneas y extractores para cocinas, hornos y azoteas, resueltas de punta a punta.</p>
+      </header>
+      <ul class="pj__grid" style="--hk:0.85">
+        <li class="pj__item" style="--ar:0.750;--k:0">
+          <button class="pj__card" type="button" data-full="img/proyectos/desfogue-cocina.jpg" data-title="Desfogue en cocina industrial" data-cursor="Ver" aria-label="Ampliar foto: Desfogue en cocina industrial">
+            <img src="img/proyectos/desfogue-cocina-sm.jpg" srcset="img/proyectos/desfogue-cocina-sm.jpg 540w, img/proyectos/desfogue-cocina.jpg 864w" sizes="(max-width: 700px) 50vw, 24vw" width="540" height="720" loading="lazy" decoding="async" alt="Ducto de extracción de acero inoxidable que sube desde una campana y un equipo de filtrado en una cocina industrial">
+            <span class="pj__meta"><i>01</i><b>Desfogue en cocina industrial</b></span>
+          </button>
+        </li>
+        <li class="pj__item" style="--ar:0.750;--k:1">
+          <button class="pj__card" type="button" data-full="img/proyectos/chimeneas-nave.jpg" data-title="Chimeneas de extracción en nave" data-cursor="Ver" aria-label="Ampliar foto: Chimeneas de extracción en nave">
+            <img src="img/proyectos/chimeneas-nave-sm.jpg" srcset="img/proyectos/chimeneas-nave-sm.jpg 540w, img/proyectos/chimeneas-nave.jpg 864w" sizes="(max-width: 700px) 50vw, 24vw" width="540" height="720" loading="lazy" decoding="async" alt="Chimeneas de lámina de gran diámetro con codos, subiendo dentro de una nave industrial">
+            <span class="pj__meta"><i>02</i><b>Chimeneas de extracción en nave</b></span>
+          </button>
+        </li>
+        <li class="pj__item" style="--ar:0.620;--k:2">
+          <button class="pj__card" type="button" data-full="img/proyectos/horno-extraccion.jpg" data-title="Extracción para horno industrial" data-cursor="Ver" aria-label="Ampliar foto: Extracción para horno industrial">
+            <img src="img/proyectos/horno-extraccion-sm.jpg" srcset="img/proyectos/horno-extraccion-sm.jpg 540w, img/proyectos/horno-extraccion.jpg 899w" sizes="(max-width: 700px) 50vw, 24vw" width="540" height="960" loading="lazy" decoding="async" alt="Ducto y extractor sobre un horno rotativo industrial para extraer el calor de la cocina">
+            <span class="pj__meta"><i>03</i><b>Extracción para horno industrial</b></span>
+          </button>
+        </li>
+        <li class="pj__item" style="--ar:0.620;--k:3">
+          <button class="pj__card" type="button" data-full="img/proyectos/chimenea-inox.jpg" data-title="Ducto de extracción en acero inoxidable" data-cursor="Ver" aria-label="Ampliar foto: Ducto de extracción en acero inoxidable">
+            <img src="img/proyectos/chimenea-inox-sm.jpg" srcset="img/proyectos/chimenea-inox-sm.jpg 540w, img/proyectos/chimenea-inox.jpg 900w" sizes="(max-width: 700px) 50vw, 24vw" width="540" height="960" loading="lazy" decoding="async" alt="Ducto de extracción de acero inoxidable con codo y soportes metálicos fijado a un muro de concreto">
+            <span class="pj__meta"><i>04</i><b>Ducto de extracción en acero inoxidable</b></span>
+          </button>
+        </li>
+        <li class="pj__item" style="--ar:0.620;--k:4">
+          <button class="pj__card" type="button" data-full="img/proyectos/extractor-azotea.jpg" data-title="Extractor centrífugo sobre base galvanizada" data-cursor="Ver" aria-label="Ampliar foto: Extractor centrífugo sobre base galvanizada">
+            <img src="img/proyectos/extractor-azotea-sm.jpg" srcset="img/proyectos/extractor-azotea-sm.jpg 540w, img/proyectos/extractor-azotea.jpg 900w" sizes="(max-width: 700px) 50vw, 24vw" width="540" height="960" loading="lazy" decoding="async" alt="Extractor centrífugo S&amp;P instalado sobre una base galvanizada en una azotea">
+            <span class="pj__meta"><i>05</i><b>Extractor centrífugo sobre base galvanizada</b></span>
+          </button>
+        </li>
+        <li class="pj__item" style="--ar:1.779;--k:5">
+          <button class="pj__card" type="button" data-full="img/proyectos/azotea-extractores.jpg" data-title="Azotea con extractores e inyección de aire" data-cursor="Ver" aria-label="Ampliar foto: Azotea con extractores e inyección de aire">
+            <img src="img/proyectos/azotea-extractores-sm.jpg" srcset="img/proyectos/azotea-extractores-sm.jpg 640w, img/proyectos/azotea-extractores.jpg 1599w" sizes="(max-width: 700px) 50vw, 24vw" width="640" height="360" loading="lazy" decoding="async" alt="Azotea con extractores VE 04 y VE 05, unidad de inyección VI 02 y ducto galvanizado con sombrerete">
+            <span class="pj__meta"><i>06</i><b>Azotea con extractores e inyección de aire</b></span>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="pj__cta" data-reveal>
+      <p class="pj__ctatxt">La próxima foto puede ser <em>tu proyecto.</em></p>
+      <a class="btn btn--primary" data-magnetic href="https://wa.me/525511546544?text=Hola%20Leonardo%2C%20vi%20las%20obras%20en%20su%20p%C3%A1gina%20y%20quiero%20una%20cotizaci%C3%B3n%20para%20mi%20proyecto." target="_blank" rel="noopener">
+        <span>Hagamos mi proyecto</span><svg class="ico ico--arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
   </div>
 </section>
 

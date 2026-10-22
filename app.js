@@ -5,11 +5,11 @@
    MÓDULOS
    01 Utilidades            08 Hero: flujo de aire (canvas) + datos vivos
    02 Textos por palabra    09 Marquee reactivo al scroll
-   03 Preloader             10 Visor de fotos (lightbox)
+   03 Preloader             10 Proyectos y visor de fotos
    04 Navegación y menú     11 Preguntas frecuentes
    05 Revelados y contadores 12 Formulario → WhatsApp
    06 Motor de scroll       13 Cursor, botones magnéticos, extras
-   07 Efectos ligados al scroll (obra, galería, servicios, proceso…)
+   07 Efectos ligados al scroll (obra, servicios, proceso…)
    ══════════════════════════════════════════════════════════════ */
 (() => {
   'use strict';
@@ -302,35 +302,6 @@
     };
   }
 
-  // Galería: el scroll vertical desplaza un carril horizontal
-  function fxGallery() {
-    const hs = $('.hs');
-    if (!hs) return null;
-    const track = $('.hs__track', hs);
-    const count = $('.hs__count b', hs);
-    const items = $$('.hs__item:not(.hs__item--cta)', hs);
-    let top = 0, dist = 1, maxX = 0, lastN = -1;
-    const pinned = () => !reduce;
-    return {
-      measure() {
-        if (!pinned()) return;
-        maxX = Math.max(0, track.scrollWidth - S.vw);
-        dist = Math.max(1, maxX * 1.15);
-        hs.style.setProperty('--hs-h', `${Math.round(S.vh + dist)}px`);
-        top = absTop(hs);
-      },
-      update() {
-        if (!pinned()) return;
-        if (S.y < top - S.vh || S.y > top + dist + S.vh) return;
-        const p = clamp((S.y - top) / dist);
-        track.style.transform = `translate3d(${(-p * maxX).toFixed(1)}px,0,0)`;
-        hs.style.setProperty('--hp', p.toFixed(4));
-        const n = clamp(Math.round(p * (items.length - 1)) + 1, 1, items.length);
-        if (n !== lastN) { lastN = n; count.textContent = pad(n); }
-      },
-    };
-  }
-
   // Servicios: cada tarjeta se oscurece y encoge al cubrirla la siguiente
   function fxStack() {
     const cards = $$('.svc');
@@ -568,15 +539,42 @@
     }, 1300);
   }
 
-  /* ───────── 10 · VISOR DE FOTOS ───────── */
+  /* ───────── 10 · PROYECTOS Y VISOR DE FOTOS ───────── */
+  // Pestañas por categoría: solo se muestra una sección a la vez
+  function initProjects() {
+    const tabs = $$('.pj__tab');
+    const panels = $$('.pj__panel');
+    if (!tabs.length || tabs.length !== panels.length) return;
+    const select = (i, focus) => {
+      tabs.forEach((t, k) => {
+        t.setAttribute('aria-selected', String(k === i));
+        t.tabIndex = k === i ? 0 : -1;
+        panels[k].hidden = k !== i;
+      });
+      if (focus) tabs[i].focus();
+      // La altura de la página cambia: el motor de scroll tiene que volver a medir
+      document.dispatchEvent(new CustomEvent('pj:change'));
+    };
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => select(i));
+      t.addEventListener('keydown', (e) => {
+        const to = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 }[e.key];
+        if (to === undefined) return;
+        e.preventDefault();
+        select((to + tabs.length) % tabs.length, true);
+      });
+    });
+    select(0);
+  }
+
+  // Visor: navega solo entre las fotos de la categoría que se abrió
   function initLightbox() {
     const dlg = $('#lightbox');
-    const cards = $$('.hs__card[data-full]');
-    if (!dlg || typeof dlg.showModal !== 'function' || !cards.length) return;
+    if (!dlg || typeof dlg.showModal !== 'function' || !$('.pj__card[data-full]')) return;
     const img = $('.lb__img', dlg);
     const title = $('.lb__title', dlg);
     const idx = $('.lb__idx', dlg);
-    let cur = 0, lastFocus = null, closing = false, startX = 0;
+    let cards = [], cur = 0, lastFocus = null, closing = false, startX = 0;
 
     const show = (i) => {
       cur = (i + cards.length) % cards.length;
@@ -589,7 +587,8 @@
       title.textContent = c.dataset.title || '';
       idx.textContent = `${pad(cur + 1)} / ${pad(cards.length)}`;
     };
-    const open = (i) => {
+    const open = (list, i) => {
+      cards = list;
       lastFocus = document.activeElement;
       show(i);
       dlg.showModal();
@@ -610,7 +609,10 @@
       }, reduce ? 0 : 380);
     };
 
-    cards.forEach((c, i) => c.addEventListener('click', () => open(i)));
+    $$('.pj__card[data-full]').forEach((c) => c.addEventListener('click', () => {
+      const list = $$('.pj__card[data-full]', c.closest('.pj__panel'));
+      open(list, list.indexOf(c));
+    }));
     $('.lb__close', dlg).addEventListener('click', close);
     $('.lb__nav--prev', dlg).addEventListener('click', () => show(cur - 1));
     $('.lb__nav--next', dlg).addEventListener('click', () => show(cur + 1));
@@ -816,6 +818,7 @@
     initReveal();
     initFaq();
     initForm();
+    initProjects();
     initLightbox();
     initCursor();
     initMagnetic();
@@ -824,8 +827,7 @@
     initWaHint();
     const nav = initNav();
 
-    // Orden importa: la galería fija su altura antes de medir lo que viene después
-    const fx = [fxMarquee(), fxGallery(), fxExpand(), fxStack(), fxProcess(), fxFooter(), fxProgress(), fxHero(), fxScrub()].filter(Boolean);
+    const fx = [fxMarquee(), fxExpand(), fxStack(), fxProcess(), fxFooter(), fxProgress(), fxHero(), fxScrub()].filter(Boolean);
 
     const measure = () => {
       S.vw = innerWidth; S.vh = innerHeight;
@@ -835,6 +837,7 @@
     };
     let measureTimer = 0;
     const remeasure = () => { clearTimeout(measureTimer); measureTimer = setTimeout(measure, 120); };
+    document.addEventListener('pj:change', remeasure);
 
     let lastW = innerWidth, lastH = innerHeight;
     addEventListener('resize', () => {
